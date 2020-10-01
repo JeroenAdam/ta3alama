@@ -82,6 +82,14 @@ node {
             //mail to: 'info@adambahri.com',
             //subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
             //body: "Successful build completed: ${env.BUILD_URL}"
+          post {
+            success {
+                setBuildStatus("Build succeeded", "SUCCESS");
+            }
+            failure {
+                setBuildStatus("Build failed", "FAILURE");
+            }
+        }        
     }
     
 }
