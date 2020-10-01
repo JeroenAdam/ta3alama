@@ -82,7 +82,8 @@ node {
             //mail to: 'info@adambahri.com',
             //subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
             //body: "Successful build completed: ${env.BUILD_URL}"
-          void setBuildStatus(String message, String state) {
+    }
+              void setBuildStatus(String message, String state) {
              step([
                  $class: "GitHubCommitStatusSetter",
                 reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/JeroenAdam/ta3alama"],
@@ -91,5 +92,4 @@ node {
                 statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
              ]);
 			}
-    }
 }
