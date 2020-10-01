@@ -82,7 +82,7 @@ node {
             //mail to: 'info@adambahri.com',
             //subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
             //body: "Successful build completed: ${env.BUILD_URL}"
-    }
+    
               void setBuildStatus(String message, String state) {
              step([
                  $class: "GitHubCommitStatusSetter",
