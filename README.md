@@ -20,6 +20,7 @@ I used the Jhipster 6.5.1 demo app for building this Jenkins pipeline.
 I went for the Docker-in-Docker approach and the build includes Protractor e2e testing, a Docker push to registry and some additional tasks like disk cleanup and mail alert.
 
 About Jenkins and Docker-in-Docker, a good explanation [here](https://medium.com/swlh/quickstart-ci-with-jenkins-and-docker-in-docker-c3f7174ee9ff)
+
 In order to solve the docker permission denied issue: chmod 666 /var/run/docker.sock (should be set at boot time with sysv-rc-conf), only for testing purposes. More in detail explained [here](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 
 Maven dependencies will be downloaded to /var/jenkins_home/.m2/ which should be persistied with a Docker volume.
