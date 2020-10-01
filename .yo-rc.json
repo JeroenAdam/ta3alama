@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ta3alama.www",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.5.1",
+    "applicationType": "monolith",
+    "baseName": "ta3alama",
+    "packageName": "com.ta3alama.www",
+    "packageFolder": "com/ta3alama/www",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "caffeine",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZWNmZGQyNmZkYTU4NzYzZDE3MTYwZmM0Nzk2YjE2YzlmNDlhOTQyODIwNWMzY2MzNzdmMGVkY2RmMDU4ZWQwNzQwZjU2MmQ1ZjE2NzFmZDNlMjAzODMzNDllNTgyZWNkNDdhNzgyZmRkOTBlNzAyYzRjNDQyMTM0ZDNiMzRkZGM=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": ["fr", "ar-ly"],
+    "blueprints": []
+  }
+}

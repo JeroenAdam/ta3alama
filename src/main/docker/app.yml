@@ -1,0 +1,22 @@
+version: '2'
+services:
+  ta3alama-app:
+    image: ta3alama
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://ta3alama-mysql:3306/ta3alama?useUnicode=true&characterEncoding=utf8&useSSL=false
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+      - SPRING_DATA_JEST_URI=http://ta3alama-elasticsearch:9200
+      - SPRING_ELASTICSEARCH_REST_URIS=http://ta3alama-elasticsearch:9200
+    ports:
+      - 8080:8080
+  ta3alama-mysql:
+    extends:
+      file: mysql.yml
+      service: ta3alama-mysql
+  ta3alama-elasticsearch:
+    extends:
+      file: elasticsearch.yml
+      service: ta3alama-elasticsearch
