@@ -82,12 +82,13 @@ node {
     }
     try {
         stage('send mail') {
-            //sh "java --version"
-        }
-    } finally {
             //mail to: 'info@adambahri.com',
             //subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",
             //body: "Successful build completed: ${env.BUILD_URL}"
+
+        }
+    } finally {
+            //sh "java --version"
     
     }
     
