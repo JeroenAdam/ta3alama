@@ -23,9 +23,9 @@ About Jenkins and Docker-in-Docker, a good explanation [here](https://medium.com
 
 In order to solve the Docker 'permission denied' issue: *chmod 666 /var/run/docker.sock* (should be set at boot time with sysv-rc-conf), only for testing purposes. More in detail explained [here](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 
-Maven dependencies will be downloaded to */var/jenkins_home/.m2/* which should be persisted with a Docker volume.
+Maven dependencies will be downloaded to */var/jenkins_home/.m2/* which should be persisted with a Docker volume to survive container reboots.
 
-The Jenkins container needs an additional volume: *$(which docker):/usr/bin/docker* to fix the 'docker not found' error, as shown [here](https://boozallen.github.io/sdp-docs/learning-labs/1/local-development/2-run-jenkins.html).
+The Jenkins container needs an additional volume: *$(which docker):/usr/bin/docker* to avoid the 'docker not found' error, as shown [here](https://boozallen.github.io/sdp-docs/learning-labs/1/local-development/2-run-jenkins.html).
 
 (Pipeline) *chmod +x mvnw* as described [here](https://github.com/pascalgrimaud/generator-jhipster-docker/issues/29)
 
