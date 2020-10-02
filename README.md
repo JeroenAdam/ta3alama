@@ -11,7 +11,7 @@ This repository serves as a sandbox environment for my personal CI/CD (Continuou
  * [Watchtower](https://github.com/containrrr/watchtower) (watching for updated Docker image, updating running container)
 
 I'm using this DevOps workflow while coding my first large project, a [Java webapp - Content sharing platform](https://github.com/JeroenAdam/Content-sharing-platform).
-Later on, I'll launch a self-hosted [RocketChat[(https://rocket.chat) server for team collaboration, and maybe open-source the project so that more people can join.
+Later on, I'll launch a self-hosted [RocketChat](https://rocket.chat) server for team collaboration, and maybe open-source the project so that more people can join.
 Build Status (on top of this readme) is only available when my laptop is online since my build server is running locally.
 
 ## Jenkins server
