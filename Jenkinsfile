@@ -35,7 +35,7 @@ node {
 
     stage('prod build + backend tests') {
         try {
-            sh "./mvnw -ntp verify -Pprod"
+            sh "./mvnw -ntp verify -Pprod sonar:sonar"
         } catch(err) {
             throw err
         } finally {
@@ -53,11 +53,11 @@ node {
         }
     }
     
-    stage('SonarQube check') {
-            withSonarQubeEnv(credentialsId: 'SonarQube') {
-            sh "./mvnw -Dsonar.sources=./src/ sonar:sonar"
-            }
-    }    
+    //stage('SonarQube check') {
+            //withSonarQubeEnv(credentialsId: 'SonarQube') {
+            //sh "./mvnw sonar:sonar"
+            //}
+    //}    
 
     //building artifact skipped because already done during stage backend tests
     //stage('packaging') {
