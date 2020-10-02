@@ -21,16 +21,16 @@ I went for the Docker-in-Docker approach and the build includes Protractor e2e t
 
 About Jenkins and Docker-in-Docker, a good explanation [here](https://medium.com/swlh/quickstart-ci-with-jenkins-and-docker-in-docker-c3f7174ee9ff)
 
-In order to solve the docker permission denied issue: chmod 666 /var/run/docker.sock (should be set at boot time with sysv-rc-conf), only for testing purposes. More in detail explained [here](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
+In order to solve the Docker 'permission denied' issue: *chmod 666 /var/run/docker.sock* (should be set at boot time with sysv-rc-conf), only for testing purposes. More in detail explained [here](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 
-Maven dependencies will be downloaded to /var/jenkins_home/.m2/ which should be persistied with a Docker volume.
+Maven dependencies will be downloaded to */var/jenkins_home/.m2/* which should be persistied with a Docker volume.
 
-The Jenkins container needs an additional volume: $(which docker):/usr/bin/docker to fix the 'docker not found' error, as shown [here](https://boozallen.github.io/sdp-docs/learning-labs/1/local-development/2-run-jenkins.html).
+The Jenkins container needs an additional volume: *$(which docker):/usr/bin/docker* to fix the 'docker not found' error, as shown [here](https://boozallen.github.io/sdp-docs/learning-labs/1/local-development/2-run-jenkins.html).
 
-(Pipeline) chmod +x mvnw as described [here](https://github.com/pascalgrimaud/generator-jhipster-docker/issues/29)
+(Pipeline) *chmod +x mvnw* as described [here](https://github.com/pascalgrimaud/generator-jhipster-docker/issues/29)
 
-(optional, only for testing) pull+label openjdk image (this step because my pipeline does a purge of all offline containers except this one, based on label)
-Create a quick two-line Dockerfile and build it with this: docker build . -t openjdk
+(optional, only for testing) pull+label openjdk image (this step because my pipeline does a purge of all offline containers except this one, based on label).
+Create a quick two-line Dockerfile and build it with this: *docker build . -t openjdk*
 ```
 FROM openjdk:8-jre-alpine
 LABEL openjdk
