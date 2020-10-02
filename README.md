@@ -29,7 +29,7 @@ The Jenkins container needs an additional volume: *$(which docker):/usr/bin/dock
 
 (Pipeline) *chmod +x mvnw* as described [here](https://github.com/pascalgrimaud/generator-jhipster-docker/issues/29)
 
-(optional, only for testing) pull+label openjdk image (this step because my pipeline does a purge of all offline containers except this one, based on label).
+(optional, only for testing) pull+label openjdk image (this step so that the pipeline can exclude cleaning up the openjdk image, based on label).
 Create a quick two-line Dockerfile and build it with *docker build . -t openjdk*
 ```
 FROM openjdk:8-jre-alpine
