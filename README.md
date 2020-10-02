@@ -25,9 +25,9 @@ In order to solve the docker permission denied issue: chmod 666 /var/run/docker.
 
 Maven dependencies will be downloaded to /var/jenkins_home/.m2/ which should be persistied with a Docker volume.
 
-The Jenkins container needed an additional volume: $(which docker):/usr/bin/docker to avoid 'docker not found', or 'Docker exec not found in $PATH' errors.
+The Jenkins container needs an additional volume: $(which docker):/usr/bin/docker to fix the 'docker not found' error, as shown [here](https://boozallen.github.io/sdp-docs/learning-labs/1/local-development/2-run-jenkins.html).
 
-(in pipeline) chmod +x mvnw as described [here](https://github.com/pascalgrimaud/generator-jhipster-docker/issues/29)
+(Pipeline) chmod +x mvnw as described [here](https://github.com/pascalgrimaud/generator-jhipster-docker/issues/29)
 
 (optional, only for testing) pull+label openjdk image (this step because my pipeline does a purge of all offline containers except this one, based on label)
 Create a quick two-line Dockerfile and build it with this: docker build . -t openjdk
