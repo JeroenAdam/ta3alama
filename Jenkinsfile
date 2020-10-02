@@ -55,7 +55,7 @@ node {
     
     stage('SonarQube check') {
             withSonarQubeEnv(credentialsId: 'SonarQube') {
-            sh "./mvnw sonar:sonar"
+            sh "./mvnw -Dsonar.sources=./src/ sonar:sonar"
             }
     }    
 
