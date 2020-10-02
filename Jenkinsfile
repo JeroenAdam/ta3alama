@@ -52,6 +52,12 @@ node {
             junit '**/target/test-results/**/TEST-*.xml'
         }
     }
+    
+    stage('SonarQube check') {
+            withSonarQubeEnv(credentialsId: 'SonarQube') {
+            sh "./mvnw sonar:sonar"
+            }
+    }    
 
     //building artifact skipped because already done during stage backend tests
     //stage('packaging') {
