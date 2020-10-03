@@ -19,7 +19,7 @@ Build Status (on top of this readme) is only available when my laptop is online 
 
 I used the Jhipster 6.5.1 demo app for this Jenkins pipeline.
 I went for the Docker-in-Docker approach.
-The build includes Protractor e2e testing, SonarQube code quality inspection, a Docker push to registry and some additional tasks like disk cleanup and mail alert.
+The build includes Protractor e2e testing, SonarQube code quality inspection, a Docker push to registry and and e-mail alert.
 
 About Jenkins and Docker-in-Docker, a good explanation [here](https://medium.com/swlh/quickstart-ci-with-jenkins-and-docker-in-docker-c3f7174ee9ff)
 
@@ -30,13 +30,6 @@ Maven dependencies will be downloaded to */var/jenkins_home/.m2/* which should b
 The Jenkins container needs an additional volume: *$(which docker):/usr/bin/docker* to avoid the 'docker not found' error, as shown [here](https://boozallen.github.io/sdp-docs/learning-labs/1/local-development/2-run-jenkins.html).
 
 (Pipeline) *chmod +x mvnw* as described [here](https://github.com/pascalgrimaud/generator-jhipster-docker/issues/29)
-
-(optional, only for testing) pull+label openjdk image (this step so that the pipeline can exclude cleaning up the openjdk image, based on label).
-Create a quick two-line Dockerfile and build it with *docker build . -t openjdk*
-```
-FROM openjdk:8-jre-alpine
-LABEL openjdk
-```
 
 ## App development
 
