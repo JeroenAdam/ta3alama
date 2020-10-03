@@ -53,13 +53,7 @@ node {
         }
     }
     
-    //stage('SonarQube check') {
-            //withSonarQubeEnv(credentialsId: 'SonarQube') {
-            //sh "./mvnw sonar:sonar"
-            //}
-    //}    
-
-    //building artifact skipped because already done during stage backend tests
+    //building artifact skipped because already done during build stage
     //stage('packaging') {
     //    sh "./mvnw -ntp verify -Pprod -DskipTests"
     //    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
@@ -68,9 +62,7 @@ node {
     docker.image('jhipster/jhipster:v6.5.1').inside('-u jhipster -e MAVEN_OPTS="-Duser.home=./"') {
                       
         stage('docker build+push') {
-            //sh 'rm -Rf /var/jenkins_home/workspace/ta3alama/target'
             //docker.withRegistry('https://ljytvavc.gra5.container-registry.ovh.net', 'OVHPrivateRegistry') {
-            //keep commented def customImage = docker.build("ljytvavc.gra5.container-registry.ovh.net/private/ta3alama:${env.BUILD_ID}")
             //def customImage = docker.build("ljytvavc.gra5.container-registry.ovh.net/private/ta3alama:latest")
             docker.withRegistry('https://10.0.0.4', 'PrivateRegistry') {
             def customImage = docker.build("10.0.0.4/private/ta3alama:latest")                
