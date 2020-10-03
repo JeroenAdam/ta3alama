@@ -1,13 +1,3 @@
-#FROM jhipster/jhipster:v6.5.1
-#USER root
-#COPY . /code/
-#RUN rm -Rf /code/target /code/build && \
-#    mv /code/m2prod/.m2 /root/.m2 && \
-#    cd /code/ && \
-#    chmod +x mvnw && \
-#    ./mvnw clean package -Pprod -DskipTests && \
-#    mv /code/target/*.jar /app.jar
-
 FROM openjdk:8-jre-alpine
 LABEL ta3alama <ta3alama>
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
