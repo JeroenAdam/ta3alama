@@ -1,0 +1,7 @@
+.git
+.mvn
+node
+node_modules
+src
+target
+webpack
