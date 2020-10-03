@@ -33,7 +33,7 @@ node {
         sh "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm"
     }
 
-    stage('prod build + backend tests') {
+    stage('build + Sonar + backend tests') {
         try {
             sh "./mvnw -ntp verify -Pprod sonar:sonar"
         } catch(err) {
