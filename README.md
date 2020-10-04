@@ -17,20 +17,19 @@ Build Status (on top of this readme) is only available when my laptop is online 
 
 ## Jenkins server
 
-I used the Jhipster 6.5.1 demo app for this Jenkins pipeline.
-I went for the Docker-in-Docker approach.
+I used the Jhipster 6.5.1 demo app for this Jenkins pipeline and went for the Docker-in-Docker approach.
 The build includes Protractor e2e testing, SonarQube code quality inspection, a Docker push to registry and an e-mail alert.
 
 About Jenkins and Docker-in-Docker, a good explanation [here](https://medium.com/swlh/quickstart-ci-with-jenkins-and-docker-in-docker-c3f7174ee9ff)
 
-In order to solve the Docker 'permission denied' issue: *chmod 666 /var/run/docker.sock* (should be set at boot time with sysv-rc-conf), only for testing purposes. More in detail explained [here](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
+In order to solve the Docker 'permission denied' issue: *chmod 666 /var/run/docker.sock* (can be set at boot time with sysv-rc-conf), only for testing purposes. In detail explained [here](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 
 Maven dependencies will be downloaded to */var/jenkins_home/.m2/* which should be persisted with a Docker volume to survive container reboots.
 
-The Jenkins container needs an additional volume: *$(which docker):/usr/bin/docker* to avoid the 'docker not found' error, as shown [here](https://boozallen.github.io/sdp-docs/learning-labs/1/local-development/2-run-jenkins.html).
+An additional volume is needed: *$(which docker):/usr/bin/docker* to avoid the 'docker not found' error, as shown [here](https://boozallen.github.io/sdp-docs/learning-labs/1/local-development/2-run-jenkins.html).
 
 (Pipeline) *chmod +x mvnw* as described [here](https://github.com/pascalgrimaud/generator-jhipster-docker/issues/29)
 
 ## App development
 
-W10 VM with Git, OpenJDK 14, Node.js, Eclipse https://www.jhipster.tech/installation
+W10 VM with Git, OpenJDK 14, Node.js, Eclipse, more [here](https://www.jhipster.tech/installation)
