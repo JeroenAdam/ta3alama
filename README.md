@@ -19,7 +19,7 @@ Build Status (on top of this readme) is only available when my laptop is online 
 
 I used the Jhipster 6.5.1 demo app for this Jenkins pipeline.
 I went for the Docker-in-Docker approach.
-The build includes Protractor e2e testing, SonarQube code quality inspection, a Docker push to registry and and e-mail alert.
+The build includes Protractor e2e testing, SonarQube code quality inspection, a Docker push to registry and an e-mail alert.
 
 About Jenkins and Docker-in-Docker, a good explanation [here](https://medium.com/swlh/quickstart-ci-with-jenkins-and-docker-in-docker-c3f7174ee9ff)
 
