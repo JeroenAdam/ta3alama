@@ -81,4 +81,16 @@ node {
             sh 'docker system prune -a --volumes -f --filter "label=ta3alama"'
             } 
     }
+    
+    stage('send mail') {
+            try {
+                //mail to: 'info@adambahri.com',	
+                //subject: "Successful Pipeline: ${currentBuild.fullDisplayName}",	
+                //body: "Successful build completed: ${env.BUILD_URL}"	
+            } catch(err) {
+                throw err
+            } finally {
+                //sh "java --version"
+            }
+    }
 }
